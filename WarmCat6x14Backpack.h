@@ -12,6 +12,8 @@
 #ifndef warmcat6x14backpack_h
 #define warmcat6x14backpack_h
 
+#include <Wire.h>
+
 static const uint8_t DisplayNo[8] = {
   0x70,
   0x71,
@@ -138,5 +140,32 @@ static const uint16_t FourteenSegmentASCII[96] = {
   0b010010011000000, /* ~ */
   0b000000000000000, /* (del) */
 };
+
+class WarmCat6x14
+{
+  public:
+    WarmCat6x14(uint8_t displayCount);
+    void init();
+    void clear();
+    void blink(uint8_t bl);
+    void setBrightness(uint8_t brightness);
+    void showOnDisp(uint8_t disp);
+    void showScroll(void);
+    void emptyScrollBuffer(void);
+
+    void dots();
+    void disp6Char(char text[], uint8_t disp);
+    void scrollText(char text[], int scrollrate);
+    
+    uint16_t displayBuffer[8];
+    int scrollBuffer[8][8];
+    uint8_t displayCount;
+    
+  private:
+    static uint8_t _displayCount;
+};
+
+
+
 
 #endif
