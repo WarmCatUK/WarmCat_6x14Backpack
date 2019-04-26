@@ -159,6 +159,8 @@ class WarmCat6x14
     void dispChar(uint8_t disp, uint8_t digit, byte ascii, bool dp = false);
     void swirlyAll(int swirlrate = 20);
     void swirly(int swirlrate = 20);
+
+    void scrollSerialText(char c, int scrollrate);
     
     uint16_t displayBuffer[8];
     int scrollBuffer[8][8];
