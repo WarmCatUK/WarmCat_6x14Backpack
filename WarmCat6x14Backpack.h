@@ -57,7 +57,7 @@ static const uint16_t FourteenSegmentASCII[96] = {
   0b001001011000000, /* + */
   0b010000000000000, /* , */
   0b000000011000000, /* - */
-  0b000000010000000, /* . */
+  0b100000000000000, /* . */
   0b010010000000000, /* / */
   0b010010000111111, /* 0 */
   0b000010000000110, /* 1 */
@@ -155,7 +155,10 @@ class WarmCat6x14
 
     void dots();
     void disp6Char(char text[], uint8_t disp);
-    void scrollText(char text[], int scrollrate);
+    void scrollText(char text[], int scrollrate = 120);
+    void dispChar(uint8_t disp, uint8_t digit, byte ascii, bool dp = false);
+    void swirlyAll(int swirlrate = 20);
+    void swirly(int swirlrate = 20);
     
     uint16_t displayBuffer[8];
     int scrollBuffer[8][8];

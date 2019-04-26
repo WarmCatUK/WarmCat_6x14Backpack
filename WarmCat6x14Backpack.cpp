@@ -151,3 +151,38 @@ void WarmCat6x14::scrollText(char text[], int scrollrate) {
   Serial.println("Done!");
   delay(2000);
 }
+
+void WarmCat6x14::dispChar(uint8_t disp, uint8_t digit, byte ascii, bool dp) {
+  byte index = ascii - 32;
+  displayBuffer[digit] = FourteenSegmentASCII[index];
+  if (dp) { displayBuffer[digit] |= (1<<14); }
+  showOnDisp(disp);
+}
+
+void WarmCat6x14::swirlyAll(int swirlrate) {
+  clear();
+  for (int x = 0 ; x < 14 ; x++) {
+    for (int d=0; d<6; d++) {
+      displayBuffer[d] |= Swirly[x];
+    }
+    for (int disp=0; disp<_displayCount; disp++) {
+      showOnDisp(disp);
+    }
+    delay(swirlrate);
+  }
+  delay(2*swirlrate);
+}
+
+void WarmCat6x14::swirly(int swirlrate) {
+  clear();
+  for (int disp=0; disp<_displayCount; disp++) {
+    for (int d=5; d>=0; d--) {
+      for (int x=0; x<14; x++) {
+        displayBuffer[d] |= Swirly[x];
+        showOnDisp(disp);
+        delay(swirlrate);
+      }
+    }
+    memset(displayBuffer, 0, sizeof(displayBuffer));
+  }
+}
