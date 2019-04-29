@@ -2,7 +2,7 @@
  *  6 digit, 14 segment display packpack.
  *  Created April 2019.
  *  Wayne K Jones - WarmCat Solutions Ltd.
- *  Released under Creative Commons. 
+ *  Released under Creative Commons Attribution-ShareAlike 3.0 Licence
  *  https://github.com/WarmCatUK/6x14seg-backpack
  *  Connections:
  *  SDA - Arduino Uno A4 / Arduino Leonardo/Pro Micro 2
@@ -26,7 +26,7 @@ WarmCat6x14 myDisp(2);
 
 void setup() {
   Serial.begin(9600);
-  myDisp.init();  // initialise the display(s) (required)
+  myDisp.begin();  // initialise the display(s) (required)
   exampleCode();  // comment out and play with your own code :-)
   Serial.println("Hello, type to display!");
 }
@@ -42,8 +42,10 @@ void loop() {
 
 
 void exampleCode() {
+  
   // scroll text across display(s) 
-  // the message to be displayed, scroll speed (smaller is faster)
+  // first specify the message to be displayed,
+  // then scroll speed (smaller is faster)
   char message[] = "MODULAR 6X14 SEGMENT ALPHANUMERIC DISPLAY BACKPACK";
   myDisp.scrollText(message,150);
   delay(800);
@@ -59,11 +61,11 @@ void exampleCode() {
   delay(1000);
 
   // swirl each digit one at a time
-  // (scroll speed) will default to 20 if not specified
   myDisp.swirly(10);
 
   // swirl all digits at once
-  myDisp.swirlyAll(15);
+  // scroll speed for "swirly" and "swirlyAll will default to 20 if not specified
+  myDisp.swirlyAll();
   
   delay(800);
 
@@ -77,6 +79,7 @@ void exampleCode() {
   myDisp.dispChar(0,3,'9');
   myDisp.dispChar(0,4,'5');
 
+  myDisp.disp6Char("BLINKY", 0);
   // blink displays 0=off 3=fastest
   myDisp.blink(2);
   delay(2000);
@@ -91,7 +94,6 @@ void exampleCode() {
   delay(1600);
   myDisp.setBrightness(15);
   delay(800);
-  
-  myDisp.emptyScrollBuffer();
+
   myDisp.clear();
 }
