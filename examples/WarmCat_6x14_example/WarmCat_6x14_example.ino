@@ -3,7 +3,7 @@
  *  Created April 2019.
  *  Wayne K Jones - WarmCat Solutions Ltd.
  *  Released under Creative Commons Attribution-ShareAlike 3.0 Licence
- *  https://github.com/WarmCatUK/6x14seg-backpack
+ *  https://github.com/WarmCatUK/WarmCat_6x14Backpack
  *  Connections:
  *  SDA - Arduino Uno A4 / Arduino Leonardo/Pro Micro 2
  *  SCL - Arduino Uno A5 / Arduino Leonardo/Pro Micro 3
@@ -19,7 +19,7 @@
  *  011 = backpack 3 and so on.
  */
 
-#include "WarmCat6x14Backpack.h"
+#include <WarmCat_6x14Backpack.h>
 // create an instance of the WarmCat6x14 class and
 // SPECIFY NUMBER OF BACKPACKS CONNECTED:
 WarmCat6x14 myDisp(2);
