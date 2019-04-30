@@ -4,8 +4,9 @@
  *  6 digit, 14 segment display packpack.
  *  Created April 2019.
  *  Wayne K Jones - WarmCat Solutions Ltd.
- *  Released under Creative Commons, 
- *  any reproduction must include above text.
+ *  https://github.com/WarmCatUK/6x14seg-backpack
+ *  Released under Creative Commons Attribution-ShareAlike 3.0 Licence
+ *  Any reproduction must include above text.
  */
 
 
@@ -145,7 +146,7 @@ class WarmCat6x14
 {
   public:
     WarmCat6x14(uint8_t displayCount);
-    void init();
+    void begin();
     void clear();
     void blink(uint8_t bl);
     void setBrightness(uint8_t brightness);

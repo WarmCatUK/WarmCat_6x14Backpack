@@ -4,8 +4,9 @@
  *  6 digit, 14 segment display packpack.
  *  Created April 2019.
  *  Wayne K Jones - WarmCat Solutions Ltd.
- *  Released under Creative Commons, 
- *  any reproduction must include above text.
+ *  https://github.com/WarmCatUK/6x14seg-backpack
+ *  Released under Creative Commons Attribution-ShareAlike 3.0 Licence
+ *  Any reproduction must include above text.
  */
 
 #include "Arduino.h"
@@ -17,7 +18,7 @@ WarmCat6x14::WarmCat6x14(uint8_t displayCount) {
   _displayCount = displayCount;
 }
 
-void WarmCat6x14::init(void) {
+void WarmCat6x14::begin(void) {
   for (uint8_t disp = 0; disp < _displayCount; disp ++) {
     Wire.begin();
     Wire.beginTransmission(DisplayNo[disp]);
@@ -36,6 +37,7 @@ void WarmCat6x14::clear(void) {
   for(uint8_t disp=0; disp < _displayCount; disp++) {
     showOnDisp(disp);
   }
+  emptyScrollBuffer();  // also empty the scrolling text buffer
 }
 
 void WarmCat6x14::blink(uint8_t bl) {
