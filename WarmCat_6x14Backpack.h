@@ -1,17 +1,17 @@
 
 /* 
- *  WarmCat6x14Backpack.h - Library for the 
+ *  WarmCat_6x14Backpack.h - Library for the
  *  6 digit, 14 segment display packpack.
  *  Created April 2019.
  *  Wayne K Jones - WarmCat Solutions Ltd.
- *  https://github.com/WarmCatUK/6x14seg-backpack
+ *  https://github.com/WarmCatUK/WarmCat_6x14Backpack
  *  Released under Creative Commons Attribution-ShareAlike 3.0 Licence
  *  Any reproduction must include above text.
  */
 
 
-#ifndef warmcat6x14backpack_h
-#define warmcat6x14backpack_h
+#ifndef WarmCat_6x14Backpack_h
+#define WarmCat_6x14Backpack_h
 
 #include <Wire.h>
 

@@ -1,16 +1,16 @@
 
 /* 
- *  WarmCat6x14Backpack.cpp - Library for the 
+ *  WarmCat_6x14Backpack.cpp - Library for the 
  *  6 digit, 14 segment display packpack.
  *  Created April 2019.
  *  Wayne K Jones - WarmCat Solutions Ltd.
- *  https://github.com/WarmCatUK/6x14seg-backpack
+ *  https://github.com/WarmCatUK/WarmCat_6x14Backpack
  *  Released under Creative Commons Attribution-ShareAlike 3.0 Licence
  *  Any reproduction must include above text.
  */
 
 #include "Arduino.h"
-#include "WarmCat6x14Backpack.h"
+#include "WarmCat_6x14Backpack.h"
 
 uint8_t WarmCat6x14::_displayCount;
 
