@@ -11,4 +11,6 @@ Up to 8 of these backpacks can be daisychained by soldering the address jumpers.
 
 <img src = "http://warmcat.uk/wp-content/uploads/2019/04/img_3386-1-e1556586305584.jpg" height="300"/>
 
+See the tutorial here: http://warmcat.uk/?p=375
+
 The images show the prototype, final production is underway and link to store coming soon!
