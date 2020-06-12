@@ -1,6 +1,6 @@
 /*
  *  6 digit, 14 segment display packpack.
- *  Created April 2019.
+ *  Created April 2019. v0.9.2
  *  Wayne K Jones - WarmCat Solutions Ltd.
  *  Released under Creative Commons Attribution-ShareAlike 3.0 Licence
  *  https://github.com/WarmCatUK/WarmCat_6x14Backpack
